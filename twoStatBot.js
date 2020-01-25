@@ -6,6 +6,7 @@ const Discord = require('discord.js');
 // your super secret token. the password is password.
 // each item in the list between these mustache brackets is an entry in the config file
 // and this allows you to change things in the config without changing it here too. you're welcome
+// commented out for heroku reasons
 //    const { prefix, token } = require('./config.json');
 
 // this gives the bot proper life and define secret stuff
