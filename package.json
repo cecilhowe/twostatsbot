@@ -15,7 +15,7 @@
   },
   "engine": {
     "node": "13.7.0",
-    "npm": "*"
+    "npm": "6.13.6"
   },
   "author": "cecil howe / cone of negative energy",
   "license": "ISC",
