@@ -6,10 +6,11 @@ const Discord = require('discord.js');
 // your super secret token. the password is password.
 // each item in the list between these mustache brackets is an entry in the config file
 // and this allows you to change things in the config without changing it here too. you're welcome
-    const { prefix, token } = require('./config.json');
+//    const { prefix, token } = require('./config.json');
 
-// this gives the bot proper life
+// this gives the bot proper life and define secret stuff
     const client = new Discord.Client();
+    prefix: process.env.prefix
 
 // bring tracery to this picnic
     const tracery = require('tracery-grammar');
@@ -147,4 +148,4 @@ const Discord = require('discord.js');
 
 
 // log yourself in mates
-    client.login(token);
+    client.login(process.env.token);
