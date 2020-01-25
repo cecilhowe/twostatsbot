@@ -50,15 +50,6 @@ const Discord = require('discord.js');
         'statRoll': [
             'rolls a `#statDice#`  *!*'
         ],
-        'statRollTwo': [
-            'rolls a `#statDice#` and a `#statDice#` *!*'
-        ],
-        'statRollThree': [
-            'rolls a `#statDice#`, a `#statDice#`, and a `#statDice#` *!*'
-        ],
-        'statRollFour': [
-            'rolls `#statDice#`, `#statDice#`, `#statDice#`, and `#statDice#` *!*'
-        ],
         'statSave': [
             'Save versus `#statList#` ( Difficulty: \`#statThrow#\` )  *!*',
             'Roll `#statThrow#` to save versus `#statList#`  *!*',
@@ -110,22 +101,10 @@ const Discord = require('discord.js');
             message.author.send(`${grammar.flatten('#statWhisper#')}`);
         }
 
-        // roll d6 once, twice, thrice, fource
+        // roll d6 once
         else if (message.content === `${prefix}roll`) {
             message.delete();
             message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statRoll#')}`);
-        }
-        else if (message.content === `${prefix}roll 2`) {
-            message.delete();
-            message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statRollTwo#')}`);
-        }
-        else if (message.content === `${prefix}roll 3`) {
-            message.delete();
-            message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statRollThree#')}`);
-        }
-        else if (message.content === `${prefix}roll 4`) {
-            message.delete();
-            message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statRollFour#')}`);
         }
 
         // +! command; does a save
