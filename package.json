@@ -1,0 +1,17 @@
+{
+  "name": "twostatbot",
+  "version": "0.69.420",
+  "description": "There are two stats.",
+  "main": "twoStatBot.js",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "eslint": "^6.8.0",
+    "tracery-grammar": "^2.7.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cecil howe / cone of negative energy",
+  "license": "ISC"
+}
