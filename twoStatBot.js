@@ -10,7 +10,7 @@ const Discord = require('discord.js');
 
 // this gives the bot proper life and define secret stuff
     const client = new Discord.Client();
-    prefix: process.env.prefix
+    commandPrefix: process.env.prefix
 
 // bring tracery to this picnic
     const tracery = require('tracery-grammar');
