@@ -1,1 +1,1 @@
-worker: npm start
+web: node twoStatBot.js
