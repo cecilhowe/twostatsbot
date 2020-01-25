@@ -14,7 +14,7 @@ const Discord = require('discord.js');
     const prefix = process.env.prefix;
 
 // bring tracery to this picnic
-    const tracery = require('tracery-grammar.js');
+    const tracery = require('tracery-grammar');
 
 // this enables modifiers for tracery like .a and .capitalize but we're not using any of those
 // in this script right now, so let's turn it off.
