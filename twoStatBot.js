@@ -81,7 +81,7 @@ const Discord = require('discord.js');
     bot.on('message', message => {
 
         // if the message has no +, is a bot, or is a dm the bot keeps the fuck quiet
-        if (!message.content.startsWith(prefix) || message.author.bot || !message.guild) return;
+        if (!message.content.startsWith(prefix) || message.author.bot || message.guild === null) return;
 
 
 
