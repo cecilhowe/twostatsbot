@@ -6,11 +6,11 @@ const Discord = require('discord.js');
 // your super secret token. the password is password.
 // each item in the list between these mustache brackets is an entry in the config file
 // and this allows you to change things in the config without changing it here too. you're welcome
-// commented out for heroku reasons
+// commented out for heroku reasons (TURN OFF FOR HEROKU)
 //    const { prefix, token } = require('./config.json');
 
-// this gives the bot proper life and define secret stuff
-    const client = new Discord.Client();
+// this gives the bot proper life and define secret stuff. these are stored on heroku instead of the config file
+    const bot = new Discord.Client();
     const prefix = process.env.prefix;
 
 // bring tracery to this picnic
@@ -60,29 +60,30 @@ const Discord = require('discord.js');
 
 // mandatory includsies
     // do a thing once the bot is running good and warm
-    client.once('ready', () => {
-        console.log (`Two Stat Bot is fine and how are you thank you for asking!`);
-        // tell cecil how many server couches Two Stat Bot sleeps on
-        console.log (`Two Stat Bot is installed on ${client.guilds.size} servers and can talk to ${client.users.size} people!`);
+    // tell cecil how many server couches Two Stat Bot sleeps on
+    bot.once('ready', () => {
+        console.log (`Two Stat Bot is fine and how are you thank you for asking!\nCurrently installed on ${bot.guilds.size} servers and can talk to ${bot.users.size} people!\nThis robotomottabus uses the ${prefix} symbol to use any commands. For help, tweet your problems to @negative_cone!`);
         // set the bot's activity; in discord this shows as Playing: Bolded Term
-        client.user.setActivity('fake elfgames!');
+        bot.user.setActivity('fake elfgames!');
     });
 
 // tell cecil when a new server installs this boterino
-    client.on('guildCreate', guild => {
-        console.log(`${client.users.size} players join the fight! Two Stat Bot is now running on ${client.guilds.size} servers.`);
+    bot.on('guildCreate', guild => {
+        console.log(`${bot.users.size} players join the fight! Two Stat Bot is now running on ${bot.guilds.size} servers.`);
     });
 
 // tell cecil when a server yeets the bot
-    client.on('guildDelete', guild => {
-        console.log(`${client.users.size} dads stepped out back for a cigarette. Now serving ${client.guilds.size} servers.`)
+    bot.on('guildDelete', guild => {
+        console.log(`${bot.users.size} dads stepped out back for a cigarette. Now serving ${bot.guilds.size} servers.`)
     });
 
 // begin listening for commands!
-    client.on('message', message => {
+    bot.on('message', message => {
 
-        // if the message has no + or is a bot or is a dm, the bot keeps the fuck quiet
-        if (!message.content.startsWith(prefix) || message.author.bot || message.guild === null) return;
+        // if the message has no +, is a bot, or is a dm the bot keeps the fuck quiet
+        if (!message.content.startsWith(prefix) || message.author.bot || !message.guild) return;
+
+
 
         // get two stats in public
         // first it checks to see if the message has a + in it, and if it does it looks two see what command follows.
@@ -120,12 +121,13 @@ const Discord = require('discord.js');
         }
         // bot information
         else if (message.content === `${prefix}info`) {
-            message.delete();
-            message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${client.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
+           message.delete();
+           message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${client.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
         }
     });
 
 
 
 // log yourself in mates
-    client.login(process.env.token);
+  bot.login(process.env.token);
+//    bot.login(token);
