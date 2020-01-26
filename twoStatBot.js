@@ -117,7 +117,7 @@ const Discord = require('discord.js');
         // get help
         else if (message.content === `${prefix}help`) {
             message.delete();
-            message.author.send(`Hi! Here are the Two Stat Bot commands:\nType \`+two stats\` to get your two stats.\nType \`+whisper stats\` to get your stats privately.\nType \`+roll\` to roll 1d6. You can roll up to 4d6 by adding the words \`two\`,\`three\`, or \`four\` to this command.\nType \`+!\` for a challenge`);
+            message.author.send(`Hi! Here are the Two Stat Bot commands:\nType \`+two stats\` to get your two stats.\nType \`+whisper stats\` to get your stats privately.\nType \`+roll\` to roll 1d6.\nType \`+!\` for a challenge`);
         }
         // bot information
         else if (message.content === `${prefix}info`) {
