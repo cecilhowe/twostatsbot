@@ -1,5 +1,4 @@
 {
-    "embed": {
       "title": "About Two Stats Bot",
       "description": "\nTwo Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.(number of) servers currently have this bot installed.```Please give Two Stats Bot permission to manage messages in whichever channel you want it to live; this allows it to delete command messages and keep the log clear!```For help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil\n\n",
       "color": 10594673,
@@ -33,5 +32,4 @@
           "inline": true
         }
       ]
-    }
-  }
+}
