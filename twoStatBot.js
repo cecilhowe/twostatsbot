@@ -118,7 +118,7 @@ const Discord = require('discord.js');
         else if (message.content === `${prefix}help`) {
             message.delete([0]).catch(() => null);
             const embedHelp = require('./helpEmbed.json');
-            message.author.send(`${embedHelp}`);
+            message.author.send({embed: embedHelp});
         }
         // bot information
         else if (message.content === `${prefix}info`) {
