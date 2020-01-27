@@ -22,12 +22,12 @@
           "inline": true
         },
         {
-          "name": "+!",
+          "name": "``+!``",
           "value": "Save versus*!*",
           "inline": true
         },
         {
-          "name": "+help",
+          "name": "``+help``",
           "value": "See this message again for some reason. ¯\\_(ツ)_/¯",
           "inline": true
         }
