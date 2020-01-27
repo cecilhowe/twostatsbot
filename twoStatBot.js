@@ -90,9 +90,7 @@ const Discord = require('discord.js');
         // for this first one, it looks for +two stats and if the message says +two stats, it sends two stats to the channel
         // and says who they belong to. message.author.username is the name of the person who asked for the stats.
         if (message.content === `${prefix}two stats`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
+            message.delete([0]).catch(() => null);
             message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statSentence#')}`);
         }
 
@@ -100,41 +98,31 @@ const Discord = require('discord.js');
         // checks for the same shit as the first one, but instead of +two stats it wants +whisper stats. if it gets what it wants
         // the bot sends a private message to whomstever asked for it.
         else if (message.content === `${prefix}whisper stats`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
+            message.delete([0]).catch(() => null);
             message.author.send(`${grammar.flatten('#statWhisper#')}`);
         }
 
         // roll d6 once
         else if (message.content === `${prefix}roll`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
+            message.delete([0]).catch(() => null);
             message.channel.send(`\`${message.author.username}\` ${grammar.flatten('#statRoll#')}`);
         }
 
         // +! command; does a save
         else if (message.content === `${prefix}!`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
+            message.delete([0]).catch(() => null);
             message.channel.send(`Quick! \`${message.author.username}\`! ${grammar.flatten('#statSave#')}`);
         }
 
         // get help
         else if (message.content === `${prefix}help`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
+            message.delete([0]).catch(() => null);
             message.author.send(`Hi! Here are the Two Stat Bot commands:\nType \`+two stats\` to get your two stats.\nType \`+whisper stats\` to get your stats privately.\nType \`+roll\` to roll 1d6.\nType \`+!\` for a challenge.\n\nPlease give Two Stats Bot permission to manage messages in whichever channel you want it to live; this allows it to delete command messages and keep the log clear!`);
         }
         // bot information
         else if (message.content === `${prefix}info`) {
-            message.delete([0]).catch(err => {
-                console.log('Two Stats Bot could not delete a command!\n' + err.stack);
-            });
-           message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${bot.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
+            message.delete([0]).catch(() => null);
+            message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${bot.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
         }
     });
 
