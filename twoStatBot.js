@@ -117,53 +117,14 @@ const Discord = require('discord.js');
         // get help
         else if (message.content === `${prefix}help`) {
             message.delete([0]).catch(() => null);
-
-            // make embed
-            
-            const embedInfo = {
-                "title": "About Two Stats Bot",
-                "description": "\nTwo Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.(number of) servers currently have this bot installed.```Please give Two Stats Bot permission to manage messages in whichever channel you want it to live; this allows it to delete command messages and keep the log clear!```For help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil\n\n",
-                "color": 10594673,
-                "author": {
-                  "name": "Two Stats Bot Information & Help !",
-                  "icon_url": ""
-                },
-                "fields": [
-                  {
-                    "name": "**Commands**",
-                    "value": "Use ``+`` to execute these commands:"
-                  },
-                  {
-                    "name": "``+two stats``",
-                    "value": "Get two random stats*!*",
-                    "inline": true
-                  },
-                  {
-                    "name": "``+roll``",
-                    "value": "Roll 1d6*!*",
-                    "inline": true
-                  },
-                  {
-                    "name": "+!",
-                    "value": "Save versus*!*",
-                    "inline": true
-                  },
-                  {
-                    "name": "+help",
-                    "value": "See this message again for some reason. ¯\\_(ツ)_/¯",
-                    "inline": true
-                  }
-                ]
-              };
-
-
-            message.author.send({ embedInfo });
+            const { embedHelp } = require('./helpEmbed.json');
+            message.author.send({ embedHelp });
         }
         // bot information
-      //  else if (message.content === `${prefix}info`) {
-      //      message.delete([0]).catch(() => null);
-      //      message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${bot.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
-      //  }
+        else if (message.content === `${prefix}info`) {
+            message.delete([0]).catch(() => null);
+            message.author.send(`Two Stat Bot is an exercise in making tabletop adventure game bots that use tracery for discord bots. Tracery is by Kate Compton.\n\`${bot.guilds.size}\` servers currently have this bot installed.\nFor help and other information, I can be reached on twitter: @negative_cone\nty, lyu\n-cecil`)
+        }
     });
 
 
